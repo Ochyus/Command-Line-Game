@@ -1,5 +1,4 @@
 # Command Line Game
-
 ## Usage
 Once downloaded or forked. Run the command make and the project will be compiled and the executable will be created for you to run.
 ~~~

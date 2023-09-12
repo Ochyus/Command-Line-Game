@@ -16,4 +16,4 @@ const std::string Entity::toString() const
            "magicPoints: " + std::to_string(this->magicPoints) + "\n" +
            "defense: " + std::to_string(this->defense) + "\n" +
            "level: " + std::to_string(this->level) + "\n";
-};
+}
