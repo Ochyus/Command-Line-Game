@@ -14,4 +14,5 @@ public:
     void testMiniGame();
     void testBoardGame();
     void testUNO();
+    void error(std::string error_type);
 };

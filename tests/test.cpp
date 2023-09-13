@@ -4,11 +4,16 @@
 #include "../Main Menu/mainmenu.hpp"
 #include "test.hpp"
 #include <iostream>
+#include <stdexcept>
 
 int main()
 {
-    throw std::invalid_argument("Error:");
     Test mytest;
+    if (1==1)
+    {
+    printf("c\n");
+    return EXIT_FAILURE;
+    }
     mytest.testMainMenu();
     mytest.testPlayer();
     mytest.testEnemy();
@@ -16,6 +21,7 @@ int main()
     mytest.testMiniGame();
     mytest.testUNO();
     printf("finished\n");
+    
     return 0;
 }
 
@@ -46,3 +52,9 @@ void Test::testUNO()
 {
 
 }
+
+void Test::error(std::string error_type)
+{
+    std::cout << error_type << '\n';
+}
+
