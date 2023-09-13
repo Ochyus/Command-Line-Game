@@ -6,22 +6,32 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace std;
+
+    bool exitFailure;
+    int numTests;
+    int passedTests;
+
 int main()
 {
+    
     Test mytest;
-    if (1==1)
-    {
-    printf("c\n");
-    return EXIT_FAILURE;
-    }
+    mytest.assertTrue(1==1, "c\n");
     mytest.testMainMenu();
     mytest.testPlayer();
     mytest.testEnemy();
     mytest.testMiniGame();
     mytest.testMiniGame();
     mytest.testUNO();
+
+    double result = (double)passedTests / numTests;
+    std::string output = (to_string(result));
+    printf("Successful tests: \n%s\n", output.c_str());
+    if (numTests != passedTests)
+    {
+        return EXIT_FAILURE;
+    }
     printf("finished\n");
-    
     return 0;
 }
 
@@ -53,8 +63,16 @@ void Test::testUNO()
 
 }
 
-void Test::error(std::string error_type)
+void Test::assertTrue(bool test, std::string error_string)
 {
-    std::cout << error_type << '\n';
+    if (!test)
+    {
+    printf("c\n");
+    exitFailure = true;;
+    }
+    if (test)
+    {
+        passedTests++;
+    }
+    numTests++;
 }
-
