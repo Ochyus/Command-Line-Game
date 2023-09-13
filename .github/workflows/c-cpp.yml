@@ -17,8 +17,8 @@ jobs:
     - name: build the application
       run: make build
     - name: build the test file
-      run: make testsbuild
+      run: make buildtests
     - name: run the tests
-      run: make build
+      run: make runtests
     - name: remove the test file
-      run: make testsbuild
+      run: make cleantests
