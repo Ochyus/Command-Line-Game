@@ -14,7 +14,6 @@ using namespace std;
 
 int main()
 {
-    
     Test mytest;
     mytest.assertTrue(1==1, "c\n");
     mytest.testMainMenu();
@@ -42,7 +41,9 @@ void Test::testMainMenu()
 
 void Test::testPlayer()
 {
-    Player myPlayer("Main", "mana", 1, 1, 1, 1, false, 1);
+    Player myPlayer("Main", "Mana", 1, 1, 1, 1, 1);
+    Test::assertTrue(myPlayer.getName() == "Main", "name was set up incorrectly");
+    Test::assertTrue(myPlayer.getType() == "Mana", "type was set up incorrectly");
 }
 
 void Test::testEnemy()
@@ -67,7 +68,7 @@ void Test::assertTrue(bool test, std::string error_string)
 {
     if (!test)
     {
-    printf("c\n");
+    printf("Error: %s\n", error_string.c_str());
     exitFailure = true;;
     }
     if (test)

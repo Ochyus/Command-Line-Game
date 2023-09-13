@@ -5,7 +5,7 @@
 
 
 
-Player::Player(std::string name, std::string type, int hitPoints, int attack, int magicPoints, int defense, bool isPlayer, int level)
+Player::Player(std::string name, std::string type, int hitPoints, int attack, int magicPoints, int defense, int level)
 {
     this->name = name;
     this->type = type;
@@ -13,6 +13,5 @@ Player::Player(std::string name, std::string type, int hitPoints, int attack, in
     this->attack = attack;
     this->magicPoints = magicPoints;
     this->defense = defense;
-    this->isPlayer = isPlayer;
     this->level = level;
 }
