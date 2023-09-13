@@ -7,6 +7,7 @@
 
 int main()
 {
+    throw std::invalid_argument("Error:");
     Test mytest;
     mytest.testMainMenu();
     mytest.testPlayer();
