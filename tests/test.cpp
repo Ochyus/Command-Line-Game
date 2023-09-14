@@ -44,6 +44,11 @@ void Test::testPlayer()
     Player myPlayer("Main", "Mana", 1, 1, 1, 1, 1);
     Test::assertTrue(myPlayer.getName() == "Main", "name was set up incorrectly");
     Test::assertTrue(myPlayer.getType() == "Mana", "type was set up incorrectly");
+    Test::assertTrue(myPlayer.getHitPoints() == 1, "attack was set up incorrectly");
+    Test::assertTrue(myPlayer.getAttack() == 1, "attack was set up incorrectly");
+    Test::assertTrue(myPlayer.getMagicPoints() == 1, "type was set up incorrectly");
+    Test::assertTrue(myPlayer.getDefense() == 1, "type was set up incorrectly");
+    Test::assertTrue(myPlayer.getLevel() == 1, "type was set up incorrectly");
 }
 
 void Test::testEnemy()
