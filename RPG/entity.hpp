@@ -8,7 +8,7 @@ protected:
     int hitPoints, attack, magicPoints, defense, level;
 
 public:
-    void levelUp();
+    void setLevel(int level);
     // levels up the entities and raises their stats
     std::string getName();
     std::string getType();

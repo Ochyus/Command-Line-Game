@@ -2,9 +2,20 @@
 #include "entity.hpp"
 #include <iostream>
 
-void Entity::levelUp()
+void Entity::setLevel(int level)
 {
-    this->level++; // increase level of character
+    int maxValue[4]; // level * 5 - 5;
+    int minValue[4]; // level * 4 - 4;
+    if (type == "All around")
+    {
+        srand(time(NULL)); // Seed the time
+        // int finalNum = rand()%(maxValue-minValue+1)+minValue; // Generate the number, assign to variable.
+    }
+    if (level > 0 && level < 10)
+    {
+
+    }
+    
 }
 
 std::string Entity::getName()

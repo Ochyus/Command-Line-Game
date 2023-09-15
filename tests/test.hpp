@@ -14,5 +14,5 @@ public:
     void testMiniGame();
     void testBoardGame();
     void testUNO();
-    void assertTrue(bool test, std::string error_string);
+    void assertTrue(bool test, std::string error_string, std::string testName);
 };
