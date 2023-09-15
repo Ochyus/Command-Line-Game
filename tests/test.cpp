@@ -78,11 +78,13 @@ void Test::assertTrue(bool test, std::string errorString, std::string testName)
     if (!test)
     {
         printf("Test: %s. ", testName.c_str());
-    printf("Error: %s\n", errorString.c_str());
-    exitFailure = true;;
+        printf("Error: %s\n", errorString.c_str());
+        exitFailure = true;;
     }
     if (test)
     {
+        printf("Test: %s. ", testName.c_str());
+        printf("Passed!\n");
         passedTests++;
     }
     numTests++;
