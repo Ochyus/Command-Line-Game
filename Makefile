@@ -1,8 +1,8 @@
 default: build run clean
 
 
-build: CLineGame.cpp RPG/entity.hpp RPG/entity.cpp RPG/player.hpp RPG/player.cpp RPG/enemy.hpp RPG/enemy.cpp Main\ Menu/mainmenu.hpp Main\ Menu/mainmenu.cpp
-	g++ CLineGame.cpp RPG/entity.cpp RPG/player.cpp RPG/enemy.cpp Main\ Menu/mainmenu.cpp -o CLineGame
+build: CLineGame.cpp RPG/entity.hpp RPG/entity.cpp Main\ Menu/mainmenu.hpp Main\ Menu/mainmenu.cpp
+	g++ CLineGame.cpp Main\ Menu/mainmenu.cpp RPG/entity.cpp -o CLineGame
 
 run: CLineGame
 	./CLineGame
@@ -13,8 +13,8 @@ clean: CLineGame
 tests: buildtests runtests cleantests
 
 
-buildtests: tests/test.cpp tests/test.hpp RPG/entity.cpp RPG/player.cpp RPG/enemy.cpp Main\ Menu/mainmenu.cpp
-	g++ tests/test.cpp RPG/entity.cpp RPG/player.cpp RPG/enemy.cpp Main\ Menu/mainmenu.cpp -o tests/test
+buildtests: tests/test.cpp tests/test.hpp Main\ Menu/mainmenu.cpp RPG/entity.cpp
+	g++ tests/test.cpp Main\ Menu/mainmenu.cpp RPG/entity.cpp -o tests/test
 
 runtests: tests/test
 	./tests/test

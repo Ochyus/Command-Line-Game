@@ -2,21 +2,30 @@
 #include "entity.hpp"
 #include <iostream>
 
+
+Entity::Entity(std::string name, std::string type, int level, bool isPlayer)
+{
+    this->name = name;
+    this->type = type;
+    this->level = level;
+    this->isPlayer = isPlayer;
+    Entity::setLevel(level);
+}
 void Entity::setLevel(int level)
 {
     this->level = level;
-    int maxValue[3]; // level * 5 - 5;
-    int minValue[3]; // level * 4 - 4;
-    if (type == "All around")
+    int maxValue[4]; // level * 5 - 5;
+    int minValue[4]; // level * 4 - 4;
+    if (type == "All Around")
     {
-        maxValue[0] = level * 3^2 - 2^2;
-        minValue[0] = level * 2^2 - 1^2;
-        maxValue[1] = level * 3^2 - 2^2;
-        minValue[1] = level * 2^2 - 1^2;
-        maxValue[2] = level * 3^2 - 2^2;
-        minValue[2] = level * 2^2 - 1^2;
-        maxValue[3] = level * 3^2 - 2^2;
-        minValue[3] = level * 2^2 - 1^2;
+        maxValue[0] = level * (3^2 - 2^2);
+        minValue[0] = level * (2^2 - 1^2);
+        maxValue[1] = level * (3^2 - 2^2);
+        minValue[1] = level * (2^2 - 1^2);
+        maxValue[2] = level * (3^2 - 2^2);
+        minValue[2] = level * (2^2 - 1^2);
+        maxValue[3] = level * (3^2 - 2^2);
+        minValue[3] = level * (2^2 - 1^2);
     }
     srand(time(NULL)); // Seed the time
     this->hitPoints = rand()%(maxValue[0]-minValue[0]+1)+minValue[0]; // Generate the number, assign to variable.
@@ -58,6 +67,16 @@ int Entity::getDefense()
 int Entity::getLevel()
 {
     return this->level;
+}
+
+bool Entity::getPlayerStatus()
+{
+    return this->isPlayer;
+}
+
+bool Entity::isAlive()
+{
+    return (this->hitPoints > 0);
 }
 
 const std::string Entity::toString() const

@@ -1,7 +1,5 @@
-#include "../RPG/entity.hpp"
-#include "../RPG/player.hpp"
-#include "../RPG/enemy.hpp"
 #include "../Main Menu/mainmenu.hpp"
+#include "../RPG/entity.hpp"
 #include "test.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -40,9 +38,9 @@ void Test::testMainMenu()
 
 void Test::testPlayer()
 {
-    Player myPlayer("Main", "Mana", 1, 1, 1, 1, 1);
-    Test::assertTrue(myPlayer.getName() == "Main", "name was set up incorrectly", "Player: Get Name");
-    Test::assertTrue(myPlayer.getType() == "Mana", "type was set up incorrectly", "Player: Get Type");
+    Entity myPlayer("Player", "All Around", 1, true);
+    Test::assertTrue(myPlayer.getName() == "Player", "name was set up incorrectly", "Player: Get Name");
+    Test::assertTrue(myPlayer.getType() == "All Around", "type was set up incorrectly", "Player: Get Type");
     Test::assertTrue(myPlayer.getHitPoints() == 1, "hitPoints was set up incorrectly", "Player: Get Hit Points");
     Test::assertTrue(myPlayer.getAttack() == 1, "attack was set up incorrectly", "Player: Get Attack");
     Test::assertTrue(myPlayer.getMagicPoints() == 1, "magicPoints was set up incorrectly", "Player: Get Magic Points");
@@ -52,9 +50,9 @@ void Test::testPlayer()
 
 void Test::testEnemy()
 {
-    Enemy myEnemy("Enemy", "Physical", 1);
+    Entity myEnemy("Enemy", "All Around", 1, false);
     Test::assertTrue(myEnemy.getName() == "Enemy", "name was set up incorrectly", "Enemy: Get Name");
-    Test::assertTrue(myEnemy.getType() == "Physical", "type was set up incorrectly", "Enemy: Get Type");
+    Test::assertTrue(myEnemy.getType() == "All Around", "type was set up incorrectly", "Enemy: Get Type");
     Test::assertTrue(myEnemy.getHitPoints() == 1, "hitPoints was set up incorrectly", "Enemy: Get HitPoints");
     Test::assertTrue(myEnemy.getAttack() == 1, "attack was set up incorrectly", "Enemy: Get Attack");
     Test::assertTrue(myEnemy.getMagicPoints() == 1, "magicPoints was set up incorrectly", "Enemy: Get Magic Points");
@@ -77,9 +75,9 @@ void Test::testUNO()
 
 void Test::assertTrue(bool test, std::string errorString, std::string testName)
 {
-    printf("%s", testName);
     if (!test)
     {
+        printf("Test: %s. ", testName.c_str());
     printf("Error: %s\n", errorString.c_str());
     exitFailure = true;;
     }

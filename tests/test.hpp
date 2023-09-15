@@ -1,9 +1,7 @@
 #pragma once
 
-#include "../RPG/entity.hpp"
-#include "../RPG/player.hpp"
-#include "../RPG/enemy.hpp"
 #include "../Main Menu/mainmenu.hpp"
+#include "../RPG/entity.hpp"
 
 class Test
 {
