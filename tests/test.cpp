@@ -1,5 +1,5 @@
-#include "../Main Menu/mainmenu.hpp"
-#include "../RPG/entity.hpp"
+#include "../include/mainmenu.hpp"
+#include "../include/entity.hpp"
 #include "test.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -53,7 +53,7 @@ void Test::testEnemy()
     Entity myEnemy("Enemy", "All Around", 1, false);
     Test::assertTrue(myEnemy.getName() == "Enemy", "name was set up incorrectly", "Enemy: Get Name");
     Test::assertTrue(myEnemy.getType() == "All Around", "type was set up incorrectly", "Enemy: Get Type");
-    Test::assertTrue(myEnemy.getHitPoints() == 1, "hitPoints was set up incorrectly", "Enemy: Get HitPoints");
+    Test::assertTrue(myEnemy.getHitPoints() == 1, "hitPoints was set up incorrectly", "Enemy: Get Hit Points");
     Test::assertTrue(myEnemy.getAttack() == 1, "attack was set up incorrectly", "Enemy: Get Attack");
     Test::assertTrue(myEnemy.getMagicPoints() == 1, "magicPoints was set up incorrectly", "Enemy: Get Magic Points");
     Test::assertTrue(myEnemy.getDefense() == 1, "defense was set up incorrectly", "Enemy: Get Defense");

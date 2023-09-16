@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Main Menu/mainmenu.hpp"
-#include "../RPG/entity.hpp"
+#include "../include/mainmenu.hpp"
+#include "../include/entity.hpp"
 
 class Test
 {

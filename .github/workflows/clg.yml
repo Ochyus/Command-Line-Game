@@ -14,11 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: build the nessisary files
+      run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
     - name: build the application
-      run: make build
-    - name: build the test file
-      run: make buildtests
-    - name: run the tests
-      run: make runtests
-    - name: remove the test file
-      run: make cleantests
+      run: make CLG
+    - name: Build the tests for the application
+      run: make CLG_Tests
+    - name: run the test file
+      run: ./CLG_Tests

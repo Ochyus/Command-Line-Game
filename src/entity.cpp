@@ -1,5 +1,5 @@
+#include "../include/entity.hpp"
 #include <string>
-#include "entity.hpp"
 #include <iostream>
 
 
