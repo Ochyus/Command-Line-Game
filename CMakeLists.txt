@@ -1,5 +1,5 @@
 # Specify the minimum required CMake version
-cmake_minimum_required(VERSION 3.25.0)
+cmake_minimum_required(VERSION 3.22.1)
 
 # Set the project name and version
 project(CLG VERSION 0.1.0 LANGUAGES CXX)
