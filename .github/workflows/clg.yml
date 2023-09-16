@@ -19,7 +19,7 @@ jobs:
     - name: move into the build folder
       run: cd build
     - name: build the application
-      run: make help
+      run: make
     - name: Build the tests for the application
       run: make CLG_Tests
     - name: run the test file
