@@ -3,7 +3,7 @@
 
 class Entity
 {
-protected:
+private:
     std::string name, type;
     int hitPoints, attack, magicPoints, defense, level;
     bool isPlayer;
