@@ -16,13 +16,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: build the nessisary files
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
-    - name: Sleep for 5 seconds
-      run: sleep 5s
-    - name: move into the build folder
-      run: cd build
     - name: build the application
       run: make -C build CLG
     - name: Build the tests for the application
       run: make -C build CLG_Tests
     - name: run the test file
-      run: ./CLG_Tests
+      run: ./build/CLG_Tests
