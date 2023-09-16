@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install cmake
-      run: sudo apt-get update | sudo get upgrade | sudo apt install cmake
+      run: sudo apt update | sudo get upgrade | sudo apt install cmake
     - name: build the nessisary files
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
     - name: build the application
