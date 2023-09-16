@@ -18,8 +18,10 @@ jobs:
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
     - name: move into the build folder
       run: cd build
+    - name: Sleep for 5 seconds
+      run: sleep 5s
     - name: build the application
-      run: ls
+      run: make CLG
     - name: Build the tests for the application
       run: make CLG_Tests
     - name: run the test file
