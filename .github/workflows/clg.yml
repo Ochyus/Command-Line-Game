@@ -17,7 +17,7 @@ jobs:
     - name: install cmake
       run: sudo apt update | sudo apt upgrade | sudo apt install cmake
     - name: build the nessisary files
-      run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
+      run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build | cd build
     - name: build the application
       run: make CLG
     - name: Build the tests for the application
