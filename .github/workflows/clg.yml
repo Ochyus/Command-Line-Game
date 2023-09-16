@@ -21,8 +21,8 @@ jobs:
     - name: move into the build folder
       run: cd build
     - name: build the application
-      run: ls
+      run: make -C build CLG
     - name: Build the tests for the application
-      run: make CLG_Tests
+      run: make -C build CLG_Tests
     - name: run the test file
       run: ./CLG_Tests
