@@ -11,25 +11,26 @@ jobs:
 
     runs-on: ubuntu-latest
     timeout-minutes: 30
-# git pull --recurse-submodules |
-# - name: install Boost
-# run: git submodule update --init --recursive 
+
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v3
       with:
-        submodules: googletest
-    - name: Initialize Submodule
+        submodules: recursive
+
+    - name: Install Boost
       run: |
-          git submodule update --init --recursive
-    - name: install Boost
-      run: sudo apt-get install libboost-all-dev 
-    
-      
-    - name: build the nessisary files
+        sudo apt-get update
+        sudo apt-get install libboost-all-dev
+
+    - name: Build the necessary files
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
-    - name: build the application
+
+    - name: Build the application
       run: make -C build CLG
+
     - name: Build the tests for the application
       run: make -C build CLG_Tests
-    - name: run the test file
+
+    - name: Run the test file
       run: ./build/tests/CLG_Tests
