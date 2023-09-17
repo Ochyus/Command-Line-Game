@@ -11,11 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
+# git pull --recurse-submodules | 
     steps:
     - uses: actions/checkout@v3
     - name: install Boost
-      run: git pull --recurse-submodules | git submodule update --remote --recursive
+      run: git submodule update --init --recursive
     - name: install Boost
       run: sudo apt-get install libboost-all-dev 
       
