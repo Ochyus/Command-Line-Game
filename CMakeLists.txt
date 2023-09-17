@@ -4,46 +4,31 @@ cmake_minimum_required(VERSION 3.22.1)
 # Set the project name and version
 project(CLG VERSION 0.1.0 LANGUAGES CXX)
 
-# Set C++ standard (e.g., C++11, C++14, C++17, etc.)
+# This is for resolving header file includes using text editors like
+# vim/emacs/vscode
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# We will be using c++17
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CLG clg.cpp
-src/entity.cpp
-src/attack.cpp
-src/game.cpp
-src/mainmenu.cpp)
+add_subdirectory(include)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+option(BUILD_TESTS "Build library tests" ON)
+option(BUILD_EXAMPLES "Build example executables" ON)
 
-target_compile_features(CLG PRIVATE cxx_std_20)
-target_include_directories(CLG PRIVATE $(CMAKE_CURRENT_SOURCE_DIR)/include)
+if (BUILD_TESTS)
+    message(STATUS "Building tests...")
+    add_subdirectory(googletest)
+    add_subdirectory(tests)
+endif()
 
-include(CTest)
+if (BUILD_EXAMPLES)
+    message(STATUS "Building examples...")
+    add_subdirectory(src)
+endif()
 
-# Enable testing for the project
-enable_testing()
+install(FILES cmake/CLG-config.cmake DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/CLG/cmake)
 
-# Specify the test executable and its source files
-add_executable(CLG_Tests
-    tests/test.cpp
-    src/entity.cpp
-    src/attack.cpp
-    src/game.cpp
-    src/mainmenu.cpp)
-
-# Link any libraries or dependencies needed for testing
-# target_link_libraries(TestYourProjectName PRIVATE YourAdditionalLibrary)
-
-# Add a test case
-add_test(
-    NAME CLG_Tests
-    COMMAND CLG_Tests)
-
-# Optional: You can add more tests in a similar manner
-
-# Set the working directory for tests (optional)
-# set_tests_properties(YourTestName PROPERTIES WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
-
-# ... (Rest of your CMake configuration)
+install(EXPORT ${CMAKE_PROJECT_NAME} DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/CLG/cmake)
