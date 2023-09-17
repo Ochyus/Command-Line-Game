@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install Boost
+      run: sudo apt-get install libboost-all-dev
     - name: build the nessisary files
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
     - name: build the application
@@ -21,4 +23,4 @@ jobs:
     - name: Build the tests for the application
       run: make -C build CLG_Tests
     - name: run the test file
-      run: ./build/CLG_Tests
+      run: ./build/tests/CLG_Tests
