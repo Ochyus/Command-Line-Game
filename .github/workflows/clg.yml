@@ -15,7 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install Boost
-      run:  git add https://github.com/google/googletest.git | sudo apt-get install libboost-all-dev
+      run: git pull --recurse-submodules | git submodule update --remote --recursive
+    - name: install Boost
+      run: sudo apt-get install libboost-all-dev 
+      
     - name: build the nessisary files
       run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
     - name: build the application
