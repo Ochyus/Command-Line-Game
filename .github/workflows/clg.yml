@@ -24,7 +24,9 @@ jobs:
           sudo apt-get install libboost-all-dev
 
       - name: Build the necessary files
-        run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
+        run: |
+          ls
+          cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
 
       - name: Build the application
         run: make -C build CLG
