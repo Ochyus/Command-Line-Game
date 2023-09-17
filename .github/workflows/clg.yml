@@ -16,7 +16,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
       with:
+        token: ${{ secrets.CI_TOKEN }}
         submodules: true
+
+    # Update references
+    - name: Git Sumbodule Update
+      run: |
+        git pull --recurse-submodules
+        git submodule update --remote --recursive
 
     - name: Install Boost
       run: |
