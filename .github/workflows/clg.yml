@@ -8,34 +8,29 @@ on:
 
 jobs:
   build_and_test:
-
     runs-on: ubuntu-latest
-    timeout-minutes: 30    # Update references
-  update_submodules:
-        name: Update submodules
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-          with:
-            token : ${{secrets.OOG_TOKEN}}
-            submodules : true
-        - name: Update submodules
-          id: update
-          run: git submodule update --remote --recursive 
+    timeout-minutes: 30 
+    steps:   # Update references
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Update submodules
+        id: update
+        run: git submodule update --remote --recursive 
 
-        - name: Install Boost
-          run: |
-            sudo apt-get update
-            sudo apt-get install libboost-all-dev
+      - name: Install Boost
+        run: |
+          sudo apt-get update
+          sudo apt-get install libboost-all-dev
 
-        - name: Build the necessary files
-          run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
+      - name: Build the necessary files
+        run: cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
 
-        - name: Build the application
-          run: make -C build CLG
+      - name: Build the application
+        run: make -C build CLG
 
-        - name: Build the tests for the application
-          run: make -C build CLG_Tests
+      - name: Build the tests for the application
+        run: make -C build CLG_Tests
 
-        - name: Run the test file
-          run: ./build/tests/CLG_Tests
+      - name: Run the test file
+        run: ./build/tests/CLG_Tests
