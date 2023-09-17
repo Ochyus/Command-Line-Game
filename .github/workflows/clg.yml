@@ -17,7 +17,7 @@ jobs:
       - name: Install Git
         run: |
           sudo apt-get install git
-          
+
       - name: Update submodules
         id: update
         run: git submodule update --remote --recursive 
@@ -26,11 +26,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install libboost-all-dev
-
-      - name: Install Git
-        run: |
-          sudo apt-get install git
-
 
       - name: Build the necessary files
         run: |
