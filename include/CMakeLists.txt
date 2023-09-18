@@ -1,6 +1,6 @@
 project(${CMAKE_PROJECT_NAME})
 
-find_package(Boost REQUIRED)
+find_package(Boost)
 
 set(CLG_INTERFACE_FILES 
 mainmenu.hpp

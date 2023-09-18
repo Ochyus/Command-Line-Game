@@ -10,22 +10,11 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     timeout-minutes: 30 
-    steps:   # Update references
+    steps:   
+    # Update references
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Install Git
-        run: |
-          sudo apt-get install git
-
-      - name: Update submodules
-        id: update
-        run: git submodule update --remote --recursive 
-
-      - name: Install Boost
-        run: |
-          sudo apt-get update
-          sudo apt-get install libboost-all-dev
 
       - name: Build the necessary files
         run: |
