@@ -21,11 +21,11 @@ void Entity::setStatRange()
 
 }
 
-Entity::Entity(std::string name, std::string type, int level, bool isPlayer)
+Entity::Entity(std::string name, std::string type, int level, bool playerStatus)
 {
     this->name = name;
     this->type = type;
-    this->isPlayer = isPlayer;
+    this->playerStatus = playerStatus;
     Entity::setLevel(level);
 }
 
@@ -41,47 +41,47 @@ void Entity::setLevel(int level)
     this->defense = rand()%(maxValue[3]-minValue[3]+1)+minValue[3];
 }
 
-std::string Entity::getName()
+std::string Entity::getName() const
 {
     return this->name;
 }
 
-std::string Entity::getType()
+std::string Entity::getType() const
 {
     return this->type;
 }
 
-int Entity::getHitPoints()
+int Entity::getHitPoints() const
 {
     return this->hitPoints;
 }
 
-int Entity::getAttack()
+int Entity::getAttack() const
 {
     return this->attack;
 }
 
-int Entity::getMagicPoints()
+int Entity::getMagicPoints() const
 {
     return this->magicPoints;
 }
 
-int Entity::getDefense()
+int Entity::getDefense() const
 {
     return this->defense;
 }
 
-int Entity::getLevel()
+int Entity::getLevel() const
 {
     return this->level;
 }
 
-bool Entity::getPlayerStatus()
+bool Entity::isPlayer() const
 {
-    return this->isPlayer;
+    return this->playerStatus;
 }
 
-bool Entity::isAlive()
+bool Entity::isAlive() const
 {
     return this->hitPoints > 0;
 }
@@ -94,5 +94,7 @@ const std::string Entity::toString() const
            "attack: " + std::to_string(this->attack) + "\n" +
            "magicPoints: " + std::to_string(this->magicPoints) + "\n" +
            "defense: " + std::to_string(this->defense) + "\n" +
-           "level: " + std::to_string(this->level) + "\n";
+           "level: " + std::to_string(this->level) + "\n"
+           "IsPlayer: " + std::to_string(Entity::isPlayer()) + "\n" +
+           "IsAlive: " + std::to_string(Entity::isAlive()) + "\n";
 }
