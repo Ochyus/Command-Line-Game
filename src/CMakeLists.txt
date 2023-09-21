@@ -3,7 +3,6 @@ project(${CMAKE_PROJECT_NAME})
 set(CLG_EXECUTABLES
 clg.cpp
 mainmenu.cpp
-attack.cpp
 entity.cpp
 player.cpp
 game.cpp)

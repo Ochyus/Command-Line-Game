@@ -1,20 +1,21 @@
 #pragma once
+#include "eattack.hpp"
+#include "ename.hpp"
 #include <string>
 
 class Entity
 {
 private:
-    std::string name, type;
+    Name name;
     int hitPoints, attack, magicPoints, defense, level;
     bool playerStatus;
     void setStatRange();
     void setLevel(int level);
 
 public:
-    Entity(std::string name, std::string type, int level, bool isPlayer);
+    Entity(Name name, int level, bool isPlayer);
     // levels up the entities and raises their stats
-    std::string getName() const;
-    std::string getType() const;
+    Name getName() const;
     int getHitPoints() const;
     int getAttack() const;
     int getMagicPoints() const;
@@ -23,6 +24,9 @@ public:
 
     bool isPlayer() const;
     bool isAlive() const;
+
+    std::string getNameSTR() const;
+
     
     const std::string toString() const;
     // general info on an entity

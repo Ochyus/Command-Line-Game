@@ -3,7 +3,6 @@ project(${CMAKE_PROJECT_NAME})
 set(CLG_TESTS_EXECUTABLES
     test.cpp
     ../src/mainmenu.cpp
-    ../src/attack.cpp
     ../src/entity.cpp
     ../src/player.cpp
     ../src/game.cpp)

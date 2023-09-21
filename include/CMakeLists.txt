@@ -4,7 +4,8 @@ find_package(Boost)
 
 set(CLG_INTERFACE_FILES 
 mainmenu.hpp
-attack.hpp
+eattack.hpp
+ename.hpp
 entity.hpp
 player.hpp
 game.hpp)

@@ -14,11 +14,9 @@ TEST(Main_Menu, Navigation)
 
 TEST(Player, Base)
 {
-    Entity myPlayer = Entity("Player", "All Around", 0, true);
-    testString = myPlayer.getName();
-    EXPECT_TRUE(testString == "Player");
-    testString = myPlayer.getType();
-    EXPECT_TRUE(testString == "All Around");
+    Entity myPlayer = Entity(Name::Hero, 0, true);
+    testString = myPlayer.getNameSTR();
+    EXPECT_TRUE(testString == "Hero");
     testInteger = myPlayer.getHitPoints();
     EXPECT_TRUE(testInteger == 0);
     testInteger = myPlayer.getAttack();
@@ -38,11 +36,9 @@ TEST(Player, Base)
 
 TEST(Player, Positive_Level)
 {
-    Entity myPlayer = Entity("Player", "All Around", 0, true);
-    testString = myPlayer.getName();
-    EXPECT_TRUE(testString == "Player");
-    testString = myPlayer.getType();
-    EXPECT_TRUE(testString == "All Around");
+    Entity myPlayer = Entity(Name::Hero, 0, true);
+    testString = myPlayer.getNameSTR();
+    EXPECT_TRUE(testString == "Hero");
     testInteger = myPlayer.getHitPoints();
     EXPECT_TRUE(testInteger == 0);
     testInteger = myPlayer.getAttack();
@@ -62,11 +58,9 @@ TEST(Player, Positive_Level)
 
 TEST(Enemy, Base)
 {
-    Entity myEnemy = Entity("Enemy", "All Around", 0, false);
-    testString = myEnemy.getName();
-    EXPECT_TRUE(testString == "Enemy");
-    testString = myEnemy.getType();
-    EXPECT_TRUE(testString == "All Around");
+    Entity myEnemy = Entity(Name::Hero, 0, false);
+    testString = myEnemy.getNameSTR();
+    EXPECT_TRUE(testString == "Hero");
     testInteger = myEnemy.getHitPoints();
     EXPECT_TRUE(testInteger == 0);
     testInteger = myEnemy.getAttack();
@@ -86,11 +80,9 @@ TEST(Enemy, Base)
 
 TEST(Enemy, Positive_Level)
 {
-    Entity myEnemy = Entity("Enemy", "All Around", 0, false);
-    testString = myEnemy.getName();
-    EXPECT_TRUE(testString == "Enemy");
-    testString = myEnemy.getType();
-    EXPECT_TRUE(testString == "All Around");
+    Entity myEnemy = Entity(Name::Hero, 0, false);
+    testString = myEnemy.getNameSTR();
+    EXPECT_TRUE(testString == "Hero");
     testInteger = myEnemy.getHitPoints();
     EXPECT_TRUE(testInteger == 0);
     testInteger = myEnemy.getAttack();
