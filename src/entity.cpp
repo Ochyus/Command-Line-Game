@@ -117,13 +117,13 @@ Entity::Entity(Name name, int level, bool playerStatus)
     }
     }
 
-        int stats[] = {minHitPoints, maxHitPoints, minAttack, maxAttack, minMagicPoints, maxMagicPoints, minDefense, maxDefense};
+    int stats[] = {minHitPoints, maxHitPoints, minAttack, maxAttack, minMagicPoints, maxMagicPoints, minDefense, maxDefense};
 
-        srand(time(NULL));                                               // Seed the time
-        this->hitPoints = rand() % (stats[1] - stats[0] + 1) + stats[0]; // Generate the number, assign to variable.
-        this->attack = rand() % (stats[3] - stats[2] + 1) + stats[2];
-        this->magicPoints = rand() % (stats[5] - stats[4] + 1) + stats[4];
-        this->defense = rand() % (stats[7] - stats[6] + 1) + stats[6];
+    srand(time(NULL));                                               // Seed the time
+    this->hitPoints = rand() % (stats[1] - stats[0] + 1) + stats[0]; // Generate the number, assign to variable.
+    this->attack = rand() % (stats[3] - stats[2] + 1) + stats[2];
+    this->magicPoints = rand() % (stats[5] - stats[4] + 1) + stats[4];
+    this->defense = rand() % (stats[7] - stats[6] + 1) + stats[6];
 }
 
 int Entity::getHitPoints() const
