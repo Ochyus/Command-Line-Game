@@ -8,7 +8,8 @@ eattack.hpp
 ename.hpp
 entity.hpp
 player.hpp
-game.hpp)
+game.hpp
+rpg.hpp)
 
 add_library(CLGame 
     INTERFACE
