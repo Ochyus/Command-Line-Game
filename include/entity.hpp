@@ -9,8 +9,6 @@ private:
     Name name;
     int hitPoints, attack, magicPoints, defense, level;
     bool playerStatus;
-    void setStatRange();
-    void setLevel(int level);
 
 public:
     Entity(Name name, int level, bool isPlayer);
