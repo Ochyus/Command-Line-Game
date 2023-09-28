@@ -4,7 +4,7 @@ find_package(Boost)
 
 set(CLG_INTERFACE_FILES 
 mainmenu.hpp
-eattack.hpp
+emove.hpp
 ename.hpp
 entity.hpp
 player.hpp

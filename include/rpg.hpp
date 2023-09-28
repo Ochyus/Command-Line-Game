@@ -8,5 +8,5 @@ private:
     std::vector<Entity> enemyList;
     std::vector<Entity> battle;
 public:
-    RPG::RPG();
+    RPG();
 };
