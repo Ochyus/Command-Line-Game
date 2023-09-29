@@ -17,14 +17,16 @@ jobs:
 
       - name: Build the necessary files
         run: |
-          ls
           cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
 
       - name: Build the application
-        run: make -C build CLG
+        run: |
+          make -C build CLG
 
       - name: Build the tests for the application
-        run: make -C build CLG_Tests
+        run: |
+          make -C build CLG_Tests
 
       - name: Run the test file
-        run: ./build/tests/CLG_Tests
+        run: |
+          ./build/tests/CLG_Tests
