@@ -6,7 +6,7 @@ set(CLG_TESTS_EXECUTABLES
     ../src/entity.cpp
     ../src/player.cpp
     ../src/game.cpp
-    ../src/rpg.cpp)
+    ../src/rpgbattle.cpp)
 
 
 add_executable(CLG_Tests ${CLG_TESTS_EXECUTABLES})

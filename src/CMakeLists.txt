@@ -6,7 +6,7 @@ mainmenu.cpp
 entity.cpp
 player.cpp
 game.cpp
-rpg.cpp)
+rpgbattle.cpp)
 
 add_executable(CLG ${CLG_EXECUTABLES})
 

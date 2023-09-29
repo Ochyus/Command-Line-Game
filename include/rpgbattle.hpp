@@ -1,12 +1,12 @@
 #include <vector>
 #include "entity.hpp"
 
-class RPG
+class RPGBattle
 {
 private:
     int entityNum;
     std::vector<Entity> enemyList;
     std::vector<Entity> battle;
 public:
-    RPG();
+    RPGBattle();
 };

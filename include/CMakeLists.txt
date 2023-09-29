@@ -9,7 +9,8 @@ ename.hpp
 entity.hpp
 player.hpp
 game.hpp
-rpg.hpp)
+rpgbattle.hpp
+commands.hpp)
 
 add_library(CLGame 
     INTERFACE
