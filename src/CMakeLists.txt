@@ -1,7 +1,7 @@
 project(${CMAKE_PROJECT_NAME})
 
 set(CLG_OBJECTS
-objects/clg.cpp
+objects/main.cpp
 objects/mainmenu.cpp
 objects/game.cpp
 objects/player.cpp
