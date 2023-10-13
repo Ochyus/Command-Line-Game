@@ -4,13 +4,13 @@ find_package(Boost)
 
 set(CLG_INTERFACE_FILES 
 mainmenu.hpp
+game.hpp
 emove.hpp
+eattack.hpp
 ename.hpp
 entity.hpp
 player.hpp
-game.hpp
-rpgbattle.hpp
-commands.hpp)
+rpgbattle.hpp)
 
 add_library(CLGame 
     INTERFACE
