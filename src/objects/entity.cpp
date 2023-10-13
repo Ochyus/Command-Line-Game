@@ -115,6 +115,10 @@ Entity::Entity(Name name, int level, bool playerStatus)
         maxDefense = level * ((3 * 3) - (2 * 2));
         break;
     }
+    default: 
+    {
+        break;
+    }
     }
 
     int stats[] = {minHitPoints, maxHitPoints, minAttack, maxAttack, minMagicPoints, maxMagicPoints, minDefense, maxDefense};
