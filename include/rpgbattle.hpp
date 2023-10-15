@@ -9,4 +9,5 @@ private:
     std::vector<Entity> battle;
 public:
     RPGBattle();
+    void AIMode();
 };

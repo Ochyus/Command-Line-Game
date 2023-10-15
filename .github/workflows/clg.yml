@@ -2,22 +2,27 @@ name: Command Line Game CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev" ]
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: [ ubuntu-latest ]
     timeout-minutes: 30 
+    strategy:
+      fail-fast: true
+      matrix:
+        build-configuration: [ Debug, Release]
+
     steps:   
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
       - name: Build the necessary files
         run: |
-          cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -B build
+          cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=${{matrix.build-configuration}} -B build
 
       - name: Build the application
         run: |

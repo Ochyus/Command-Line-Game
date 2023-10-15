@@ -3,10 +3,6 @@
 #include <string>
 #include <gtest/gtest.h>
 
-std::string testString;
-int testInteger;
-bool testBoolean;
-
 TEST(Main_Menu, Navigation)
 {
 
